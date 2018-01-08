@@ -80,11 +80,27 @@ testingAngluarApp.directive('destinationDirective', function(){
             apiId: '=',
             onRemove: '&'
         },
-        template: '<span>{{destination.city}}, {{destination.state}}</span>'+
-        '<span ng-if="destination.weather.main">{{destination.weather.main}}, {{destination.weather.temp}}&deg;C</span>'+
-        '<span>---{{destination.weather.tempK}} K</span>'+
-        '<button ng-click="onRemove()">Remove</button>'+
-        '<button ng-click="getWeather(destination)">Update Weather</button>',
+        // template: '<span>{{destination.city}}, {{destination.state}}</span>'+
+        // '<span ng-if="destination.weather.main">{{destination.weather.main.main}}, {{destination.weather.temp}}&deg;C</span>'+
+        // '<span>---{{destination.weather.tempK}} K</span>'+
+        // '<button ng-click="onRemove()">Remove</button>'+
+        // '<button ng-click="getWeather(destination)">Update Weather</button>',
+        template: '<div class="weather-app">'+                           
+                        '<div class="top">'+
+                        '<div id="toggleCelsius" class="temperature-celsius"><span id="temperatureCelsius">{{destination.weather.temp}}&deg;C</span></div>'+  
+                            '<div class="location"><span id="loc">{{destination.city}}</span></div>'+
+                            '<img id="icon" width="75px" ng-src="http://openweathermap.org/img/w/{{destination.weather.main.icon}}.png" onerror="this.src=\'http://openweathermap.org/img/w/11d.png\'" />'+
+                            '<p id="description">{{destination.weather.main.description}}</p>'+
+                        '</div>'+
+                        '<div class="bottom">'+
+                            '<div class="humidity">'+
+                                '<span>Humidity: <span id="humidity">{{destination.weather.humidity}}</span>%'+
+                                '</span>'+
+                            '</div>'+
+                            '<button class="btn btn-danger" ng-click="onRemove()">Remove</button>'+
+                            '<button class="btn btn-info" ng-click="getWeather(destination)">Update Weather</button>'+
+                        '</div>'+
+                    '</div>',
         controller: function($http, $rootScope, $scope, celciusToKelvin){
             $scope.getWeather = function(destination) {
                 
@@ -93,7 +109,9 @@ testingAngluarApp.directive('destinationDirective', function(){
                             function successCallback(response){
                                 if(response.data.weather) {
                                     destination.weather = {};
-                                    destination.weather.main = response.data.weather[0].main;
+                                    destination.weather.main = response.data.weather[0];
+                                    destination.weather.humidity = response.data.main.humidity;
+                                    console.log(response.data);
                                     destination.weather.temp = response.data.main.temp;
                                     destination.weather.tempK = celciusToKelvin.celciusToKelvin(response.data.main.temp);
                                 }

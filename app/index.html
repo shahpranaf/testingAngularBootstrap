@@ -1,36 +1,93 @@
 <!doctype html>
 <html lang="en" ng-app="testingAngularApp">
-    <head>
-        <title>Testing AngularJS</title>
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="js/app.js"></script>
-    </head>
-    <body ng-controller="testingAngularCtrl">
-        <header>{{title}}</header>
 
-        <section>
+<head>
+    <title>Testing AngularJS</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/countries.js"></script>
+
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-controller="testingAngularCtrl">
+    <div class="main layer">
+        <h1>{{title}}</h1>
+
+        <!-- <section class="section col-md-3">
             <form ng-submit="addDestination()">
-                    city: <input type="text" ng-model="newDestination.city">
-                    state: <input type="text" name="" id="" ng-model="newDestination.state">
-                    <input type="submit" value="Add Destination">
-            </form>
-        </section>
+                <div class="form-group">
+                    <select id="country" class="form-control" name="country"></select>
+                </div>
+                <div class="form-group">
+                    <select id="state" ng-model="newDestination.state" class="form-control" name="state"></select>
+                </div>
+                <div class="form-group">
+                    <input type="text" ng-model="newDestination.city" class="form-control" id="city" placeholder="City">
+                </div>
 
-        <section>
+                //<input type="text" ng-model="newDestination.city"> state:
+                //<input type="text" name="" id="" ng-model="newDestination.state">
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary form-control" value="Add Destination">
+                </div>
+            </form>
+        </section> -->
+
+        <!-- <section class="col-md-5">
             <h2>Your Trip</h2>
             <h3 style="color: red;" ng-show="message">{{message}}</h3>
             <ul>
-                <li ng-repeat="destination in destinations">
-                   <div destination-directive destination='destination' api-id='apiId' on-remove="removeDestination($index)">
+                <li class="weatherApp" ng-repeat="destination in destinations">
+                    <div destination-directive destination='destination' api-id='apiId' on-remove="removeDestination($index)">
                 </li>
             </ul>
-        </section>
+        </section> -->
 
-        <section>
+        <!-- <section class="col-md-4">
             <h2> Warmest City </h2>
             <ul>
-                <li ng-repeat="destination in destinations | warmestDestinations: 20">{{destination.city}}, {{destination.state}}</li>
+                <li class="weatherApp" ng-repeat="destination in destinations | warmestDestinations: 10">
+                    <div class="inner">
+                        <div class="content">
+                            <div class="weather-app">
+                                <div class="right">
+                                    <div class="top">
+                                        <div id="toggleCelsius" class="temperature-celsius">
+                                            <span id="temperatureCelsius">{{destination.weather.temp}}&deg;C</span>
+                                        </div>
+
+                                        <div class="location">
+                                            <span id="loc">{{destination.city}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="top">
+                                        <img id="icon" width="75px" ng-src="http://openweathermap.org/img/w/{{destination.weather.main.icon}}.png" onerror="this.src='http://openweathermap.org/img/w/11d.png'"
+                                        />
+                                        <p id="description">{{destination.weather.main.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
-        </section>
-    </body>
+        </section> -->
+    </div>
+
+    <script>
+        populateCountries("country", "state");
+    </script>
+
+</body>
+
 </html>

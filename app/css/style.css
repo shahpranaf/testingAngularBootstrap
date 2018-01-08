@@ -1,0 +1,167 @@
+/*--
+Author: Pranav
+--*/
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+html, body{
+	font-size: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background: url(../images/banner.jpg) no-repeat 0px 0px;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+}
+h1,h2,h3,h4,h5,h6,input,p,a,select{
+	font-family: 'Montserrat', sans-serif;
+	margin:0;
+}
+ul,label{
+	margin:0;
+	padding:0;
+}
+body a:hover,body a{
+	text-decoration:none;
+}
+h1 {
+    text-align: center;
+    color: #1a4050;
+    font-size: 3em;
+    margin-bottom: 1em;
+    text-transform: capitalize;
+}
+h2 {
+    text-align: center;
+    color: #1a4050;
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-transform: capitalize;
+}
+section {
+    /* max-width: 620px; */
+    padding: 30px 38px 66px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    height: 100vh;
+}
+.weatherApp button.btn {
+    margin: 5px 0;
+    width: 100%
+}
+.layer {
+    background-color: rgba(6, 187, 240, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* =========================
+    WEATHER START
+===========================*/
+li.weatherApp {
+    float: left;
+    margin: 20px;
+}
+.weather-app {
+    margin: auto;
+    width: 160px;
+    min-height: 310px;
+    /*border: 1px solid black;*/
+    border-radius: 10px;
+    box-shadow: 10px 10px 50px #888888;
+    overflow: hidden;
+    text-align:center;
+    font-family: "Mono";
+    background-color:#3D6AA2;
+}
+
+.left {
+    float: left;
+    /*background: #262626;*/
+    padding:10px;
+    width:40%;
+    height:100%;
+    color:white;
+}
+
+.temperature-celsius {
+    margin-top:30px;
+    margin-bottom:5px;
+    font-size:32px;
+    font-weight: bold;
+    width: 150px;
+    color:wheat;
+}
+
+
+.location {
+    font-size: 18px;
+    width:100%;
+    width:150px;
+    color:white;
+}
+
+.right {
+    /*float: right;*/
+    /*width: 60%;*/
+    height:100%;
+}
+
+.top {
+    width: 100%;
+    margin: auto;
+    /*background: #cec;*/
+}
+
+.top img {
+    margin-top: 15px;
+}
+
+.top p {
+    margin-top: -14px;
+    position: relative;
+    text-transform: capitalize;
+}
+.bottom {
+    height: 100px;
+    /*background: #669999;*/
+    color: white;
+    font-weight: bold;
+}
+
+.humidity {
+    padding: 8px;
+}
+#description {
+color:white;
+}
+/* =========================
+    WEATHER END
+===========================*/
