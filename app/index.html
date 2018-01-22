@@ -22,28 +22,20 @@
     <div class="main layer">
         <h1>{{title}}</h1>
 
-        <!-- <section class="section col-md-3">
+        <section class="section col-md-3">
             <form ng-submit="addDestination()">
-                <div class="form-group">
-                    <select id="country" class="form-control" name="country"></select>
-                </div>
-                <div class="form-group">
-                    <select id="state" ng-model="newDestination.state" class="form-control" name="state"></select>
-                </div>
+                
                 <div class="form-group">
                     <input type="text" ng-model="newDestination.city" class="form-control" id="city" placeholder="City">
                 </div>
-
-                //<input type="text" ng-model="newDestination.city"> state:
-                //<input type="text" name="" id="" ng-model="newDestination.state">
 
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary form-control" value="Add Destination">
                 </div>
             </form>
-        </section> -->
+        </section>
 
-        <!-- <section class="col-md-5">
+        <section class="col-md-5">
             <h2>Your Trip</h2>
             <h3 style="color: red;" ng-show="message">{{message}}</h3>
             <ul>
@@ -51,9 +43,9 @@
                     <div destination-directive destination='destination' api-id='apiId' on-remove="removeDestination($index)">
                 </li>
             </ul>
-        </section> -->
+        </section>
 
-        <!-- <section class="col-md-4">
+        <section class="col-md-4">
             <h2> Warmest City </h2>
             <ul>
                 <li class="weatherApp" ng-repeat="destination in destinations | warmestDestinations: 10">
@@ -81,7 +73,7 @@
                     </div>
                 </li>
             </ul>
-        </section> -->
+        </section>
     </div>
 
     <script>
